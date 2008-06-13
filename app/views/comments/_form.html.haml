@@ -1,0 +1,5 @@
+%p
+  %label{:for => "comment_comment"} Comment:
+  = f.text_field :comment
+
+= f.hidden_field :user_id , :value => @object.user_id.nil? ? (session[:user_id]) : @object.user_id

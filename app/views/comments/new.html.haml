@@ -1,0 +1,9 @@
+%h1 New comment
+
+= error_messages_for :comment
+
+- form_for(:comment, :url => collection_url) do |f|
+  = render :partial => "form", :locals => { :f => f }
+  %p= submit_tag "Create"
+
+= link_to 'Back', collection_url

@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong><%=h @event.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+	<%=h @event.description %>
+</p>
+<p>
+  <strong>User:</strong><%=h @event.user_id %>
+</p>
+<p>
+  <strong>Study case:</strong><%=h @event.study_case_id %>
+</p>
+
+<%= link_to 'Edit', edit_object_url %>
+|
+<%= link_to 'Back', collection_url %>

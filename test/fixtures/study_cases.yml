@@ -1,0 +1,25 @@
+--- 
+study_cases_002: 
+  name: hello friends
+  updated_at: 2008-05-20 20:15:07
+  type: Intervention
+  id: "2"
+  description: "este eh um teste bacanudo "
+  user_id: "1"
+  created_at: 2008-05-20 20:15:07
+study_cases_003: 
+  name: hello friends  turma
+  updated_at: 2008-05-20 20:16:48
+  type: Classroom
+  id: "3"
+  description: este eh um teste bacanudo eeeeee eee eee
+  user_id: "1"
+  created_at: 2008-05-20 20:16:48
+study_cases_001: 
+  name: fixture
+  updated_at: 2008-05-19 21:14:50
+  type: Intervention
+  id: "1"
+  description: "ueuhe nueu e enuenu "
+  user_id: "2"
+  created_at: 2008-05-19 21:14:50

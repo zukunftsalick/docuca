@@ -1,0 +1,29 @@
+--- 
+users_001: 
+  salt: c98de84f674dd1248b2ffc0c4d8513b01c19f1da
+  name: ""
+  activated_at: 2008-05-23 21:38:25
+  updated_at: 2008-05-26 17:50:37
+  crypted_password: 18129ddc0d983f56997a59a5e1f0e5717c0a8be7
+  activation_code: 
+  remember_token_expires_at: 
+  id: "1"
+  remember_token: 
+  login: zukunft
+  state: passive
+  created_at: 2008-05-23 21:38:15
+  email: zukunft@gmail.com
+users_002: 
+  salt: f27a51dbebe4dd084ed78636b4351e082a0c688c
+  name: ""
+  activated_at: 2008-05-23 21:38:25
+  updated_at: 2008-05-23 21:43:56
+  crypted_password: 1ee4b8e8c99ec38b17932c8e019f36ab7f15f120
+  activation_code: 
+  remember_token_expires_at: 
+  id: "2"
+  remember_token: 
+  login: robson
+  state: passive
+  created_at: 2008-05-23 21:43:56
+  email: robsonmwoc@gmail.com

@@ -1,0 +1,15 @@
+<p>
+  <label for="event_title">Title:</label>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <label for="event_start_date">Data início:</label>
+  <%= f.text_field :start_date %>
+</p>
+<p>
+  <label for="event_description">Description:</label>
+  <%= f.text_area :description %>
+</p>
+  <%= f.hidden_field :user_id , :value => @event.user_id.nil? ? (session[:user_id]) : @event.user_id%>
+  <%= f.hidden_field :study_case_id %>
+

@@ -1,0 +1,13 @@
+<ul>
+	<li >
+		<%= link_to 'Home', home_path %>
+	</li>
+	<li >
+		<%= link_to "Estudos", study_cases_path %>
+	</li>
+	<li ><a href="#">Projeto UCA</a></li>
+	<li ><%= link_to "FAQ",faq_index_path %></li>
+	<li>
+		<%= (!logged_in?) ?  (link_to 'Login', login_path) : (link_to 'Logout', logout_path)%>
+	</li>
+</ul>

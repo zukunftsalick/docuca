@@ -1,0 +1,24 @@
+<data>
+	<event 
+		start="May 28 2008 09:00:00 GMT" 
+		end="Jun 15 2008 09:00:00 GMT" 
+		isDuration="true" 
+		title="Viagem a pequim" 
+		>
+		  Amigos, aqui está o relato de viagem a pequim
+	</event>
+    <event 
+        start="Jun 16 2008 00:00:00 GMT"
+        end="Jun 26 2008 00:00:00 GMT"
+        title="Show da sohluto"
+        >
+        Quando é o show da sohluto?
+        </event>
+    <event 
+        start="Aug 02 2008 00:00:00 GMT"
+        title="Link legal!"
+        link="http://www.concierge.com/"
+        >
+        Muito tri!
+        </event>
+</data>

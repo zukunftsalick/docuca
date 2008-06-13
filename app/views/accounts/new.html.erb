@@ -1,0 +1,17 @@
+
+<h1>Log In</h1>
+<p><%= link_to 'Inscreva-se', signup_path %></p>
+
+<% form_tag account_path do -%>
+<p><label for="login">login</label><br/>
+<%= text_field_tag 'login', @login %></p>
+
+<p><label for="password">senha</label><br/>
+<%= password_field_tag 'password', nil %></p>
+
+
+<p><label for="remember_me">lembrar meu login:</label>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+
+<p><%= submit_tag 'Entrar' %></p>
+<% end -%>

@@ -1,0 +1,26 @@
+<h1>Estudo de Caso &raquo; <%= @study_case.name %></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>User</th>
+    <th>Study case</th>
+  </tr>
+  <%- @events.each do |event|%>
+    <tr>
+      <td><%=h event.title %></td>
+      <td><%=h event.description %></td>
+      <td><%=h event.user_id %></td>
+      <td><%=h event.study_case_id %></td>
+    
+      <td><%=link_to 'Show', object_url(event) %></td>
+      <td><%=link_to 'Edit', edit_object_url(event) %></td>
+      <td><%=link_to 'Destroy', object_url(event), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<h3><%= link_to 'Inserir evento', new_object_url %></h3>
+<h3><%= link_to 'voltar para o estudo de caso '+@study_case.name, study_case_url(@study_case) %></h3>

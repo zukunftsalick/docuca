@@ -1,0 +1,27 @@
+<% content_for :custom_js_imports do%>
+<script src="http://simile.mit.edu/timeline/api/timeline-api.js" type="text/javascript"></script>
+<script src="/javascripts/timeline.js" type="text/javascript"></script>
+<% end %>
+<% content_for :custom_js_events_for_body do %>
+ onload="onLoad();" onresize="onResize();" 
+<% end %>
+
+
+<div id="uca_timeline"></div>
+
+
+
+<p>
+  <strong>Name:</strong><%=h @study_case.name %>
+</p>
+<p>
+  <strong>User:</strong><%=h @study_case.user_id %>
+</p>
+<p>
+  <strong>Description:</strong><%=h @study_case.description %>
+</p>
+<%= link_to 'Comentar', study_case_comments_path(@study_case) %>
+<%= link_to 'Inserir evento', study_case_events_url(@study_case)%>
+<%= link_to 'Edit', edit_object_url %>
+|
+<%= link_to 'Back', collection_url %>
