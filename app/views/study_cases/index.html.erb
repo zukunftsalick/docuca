@@ -1,23 +1,9 @@
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Usuário</th>
-    <th>Descrição</th>
-	<th>Tipo</th>
-  </tr>
-  <%- @study_cases.each do |study_case|%>
-    <tr>
-      <td><%=h study_case.name %></td>
-      <td><%=h study_case.user_id %></td>
-      <td><%=h study_case.description %></td>
-	  <td><%=h study_case.type %></td>
-    
-      <td><%=link_to 'Show', object_url(study_case) %></td>
-      <td><%=link_to 'Edit', edit_object_url(study_case) %></td>
-      <td><%=(link_to 'Destroy', object_url(study_case), :confirm => 'Are you sure?', :method => :delete) %></td>
-    </tr>
-  <% end %>
-</table>
-<br/>
 
-<%= link_to 'New Study Case', new_object_url %>
+<%= render :partial => 'study_case' %>
+
+
+<br/>
+<%= will_paginate @study_cases %>
+
+<%= (link_to 'adicionar estudo de caso', new_object_url) if current_user %>
+

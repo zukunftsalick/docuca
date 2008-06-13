@@ -2,7 +2,7 @@
 study_cases_002: 
   name: hello friends
   updated_at: 2008-05-20 20:15:07
-  type: Intervention
+  kind: Intervention
   id: "2"
   description: "este eh um teste bacanudo "
   user_id: "1"
@@ -10,7 +10,7 @@ study_cases_002:
 study_cases_003: 
   name: hello friends  turma
   updated_at: 2008-05-20 20:16:48
-  type: Classroom
+  kind: Classroom
   id: "3"
   description: este eh um teste bacanudo eeeeee eee eee
   user_id: "1"
@@ -18,8 +18,16 @@ study_cases_003:
 study_cases_001: 
   name: fixture
   updated_at: 2008-05-19 21:14:50
-  type: Intervention
+  kind: Intervention
   id: "1"
   description: "ueuhe nueu e enuenu "
   user_id: "2"
   created_at: 2008-05-19 21:14:50
+study_cases_004: 
+    name: fixture
+    updated_at: 2008-05-19 21:14:50
+    kind: Classroom
+    id: "4"
+    description: "vamos fguri! "
+    user_id: "2"
+    created_at: 2008-05-19 21:14:50

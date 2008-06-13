@@ -67,5 +67,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
   config.active_record.observers = :user_observer
 end
+
+require 'will_paginate'
 SITE="http://localhost:3000"
 STUDY_CASE_TYPES = %w(intervenção turma estudante PA comunidade escola)

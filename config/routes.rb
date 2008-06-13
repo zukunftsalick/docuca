@@ -4,8 +4,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :faq_admin, {:singular=>"faq_adm"}
 
-  
-
   map.resources :users
 
   map.resource :account
