@@ -1,7 +1,7 @@
 class EventsController < ResourceController::Base
   belongs_to :study_case
 
-  before_filter :login_required
+  before_filter :login_required, :except => [:show,:index,:timeline]
   layout 'default'
   
   

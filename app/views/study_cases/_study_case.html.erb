@@ -1,12 +1,14 @@
 <% @study_cases.each do |study_case|%>
 <div class='study_case'>
 	<h1 class='study_case_name'><%= link_to study_case.name.camelize , object_url(study_case) %> - 
-	 (<%= (link_to 'editar', edit_object_url(study_case)) if (current_user.id == study_case.user.id) %>)
+	<% if logged_in?%>
+		 (<%= (link_to 'editar', edit_object_url(study_case)) %>)
+	<% end %>
 	</h1>
 	<p>
-		<%=h study_case.description %>
+		<%= study_case.description %>
 	</p>
-	<span><%=h study_case.user.name %></span>
+	<span> <%=h study_case.user.name %></span>
 		
 		
 	
