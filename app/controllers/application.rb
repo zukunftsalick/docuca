@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   
   helper_method :is_admin?
+  
+  protected
   def is_admin? 
-    if logged_in? && current_user.login == "admin"
+    if logged_in? # && current_user.login == Mo
       true
     else
       false
@@ -32,8 +34,20 @@ class ApplicationController < ActionController::Base
     respond_to do |format|
       format.html do
         store_location
-        flash[:notice] = 'You must be an admin to do that.'
+        flash[:notice] = 'Você deve ser administrador para fazer isso.'
         redirect_to home_path
+      end
+    end
+  end
+  
+  def access_denied
+    respond_to do |format|
+      format.html do
+        store_location
+        flash[:notice] = 'Você deve se logar para efetuar esta ação'
+        redirect_to new_account_path
+      end
+        request_http_basic_authentication 'Web Password'
       end
     end
   end
