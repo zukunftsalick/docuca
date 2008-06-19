@@ -1,11 +1,12 @@
 class FaqController < ResourceController::Base
   layout 'default'
   def index
-    @faqs = Faq.find :all
+   
   end
   
   def show
-    @faq = Faq.find params[:id]
+    @category = FaqCategory.find params[:id]
+    @faqs = Faq.find_by_faq_category_id(params[:id]).to_a
   end
   
 end

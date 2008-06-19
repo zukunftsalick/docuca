@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+<% @faqs.each do |faq|%>
+<p>
+	<div>
+		<%= faq.question %>
+	</div>
+	
+	<div>
+		<%= faq.answer %>
+	</div>
+</p>
+<% end%>

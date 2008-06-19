@@ -47,6 +47,9 @@ class ApplicationController < ActionController::Base
         flash[:notice] = 'Você deve se logar para efetuar esta ação'
         redirect_to new_account_path
       end
+      # format.any doesn't work in rails version < http://dev.rubyonrails.org/changeset/8987
+      # you may want to change format.any to e.g. format.any(:js, :xml)
+      format.any do
         request_http_basic_authentication 'Web Password'
       end
     end

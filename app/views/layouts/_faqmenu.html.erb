@@ -1,0 +1,6 @@
+<ul class="topics">
+	<% @faq_categories = FaqCategory.find :all , :order => :name %>
+	<% @faq_categories.each do |category| %>
+		<li><%= link_to "#{category.name}", faq_category_path(category) %></li>
+	<% end%>
+</ul>

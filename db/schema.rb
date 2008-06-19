@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080613181248) do
+ActiveRecord::Schema.define(:version => 20080619013732) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentary_id",   :limit => 11
     t.string   "commentary_type"
     t.string   "comment"
     t.integer  "user_id",         :limit => 11
+    t.integer  "study_case_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,12 +34,19 @@ ActiveRecord::Schema.define(:version => 20080613181248) do
     t.boolean  "is_duration",                 :default => false
   end
 
+  create_table "faq_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "faqs", :force => true do |t|
     t.text     "question"
     t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position",   :limit => 11, :default => 0
+    t.integer  "position",        :limit => 11, :default => 0
+    t.integer  "faq_category_id", :limit => 11
   end
 
   create_table "study_cases", :force => true do |t|
