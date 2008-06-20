@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
  
-  map.resources :faq,  {:singular=>"faq"},  :has_many => :comments
+  map.resources :faq_categories, :has_many => :faqs
   
-  map.resources :faq_categories, :controller => :faq
+  map.resources :faq, :has_many => :comments
 
   map.resources :faq_admin, {:singular=>"faq_adm"}
 

@@ -6,7 +6,8 @@ class FaqController < ResourceController::Base
   
   def show
     @category = FaqCategory.find params[:id]
-    @faqs = Faq.find_by_faq_category_id(params[:id]).to_a
+    @faqs = Faq.find(:all, :conditions => ["faq_category_id = ? ", params[:id]])
+    render :layout => false
   end
   
 end

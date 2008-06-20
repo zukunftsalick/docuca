@@ -1,11 +1,14 @@
+<% content_for :custom_imports do %>
+	<%= stylesheet_link_tag "faq" %>
+<% end%>
 <h1><%= @category.name %></h1>
 <% @faqs.each do |faq|%>
-<p>
-	<div>
+<p class="faq_list">
+	<div class="faq-question">
 		<%= faq.question %>
 	</div>
 	
-	<div>
+	<div class="faq-answer">
 		<%= faq.answer %>
 	</div>
 </p>

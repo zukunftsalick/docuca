@@ -7,6 +7,10 @@
     color: #3a3a3c;
 }
 
+.spinner{
+	padding-left: 10px;
+}
+
 body {
     background: #d2cfcf url(/images/body_bg.jpg) repeat-x top left;
     padding-bottom: 30px;

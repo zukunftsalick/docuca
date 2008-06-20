@@ -6,7 +6,7 @@
 <%= stylesheet_link_tag "default"%>
 <%= stylesheet_link_tag 'ec' %>
 <%= javascript_include_tag :defaults %>
-<%= yield :custom_js_imports %>
+<%= yield :custom_imports %>
 </head>
 
 <body <%= yield :custom_js_events_for_body%> >
@@ -27,7 +27,7 @@
 				<img src="/images/logo.png" alt="" />
 			</div>
 			
-			<div class="top-<%= params[:controller]%>"></div>
+			<a href='/faq'><div class="top-<%= params[:controller]%>"></div></a>
 			<div class="content-wrapper">
 				<div id="sidebar_left">
 					<div class="<%= params[:controller]%>-menu">

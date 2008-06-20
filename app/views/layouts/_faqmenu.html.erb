@@ -1,6 +1,14 @@
 <ul class="topics">
 	<% @faq_categories = FaqCategory.find :all , :order => :name %>
 	<% @faq_categories.each do |category| %>
-		<li><%= link_to "#{category.name}", faq_category_path(category) %></li>
+		<li><%= link_to_remote "#{category.name}", 
+		:update => 'content',
+		:url => {:controller => 'faq', :action => 'show',  :id => category.id} ,
+		:method => :get,
+		:before   => %(Element.show("spinner_#{category.id}")),
+	 	:success  => %(Element.hide("spinner_#{category.id}"))
+		%>
+		<%= image_tag 'spinner.gif',:class=> 'spinner', :id => "spinner_#{category.id}", :style => 'display: none' %>
+		</li>
 	<% end%>
 </ul>

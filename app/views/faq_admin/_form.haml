@@ -1,2 +1,3 @@
 ~ f.text_area :question
 ~ f.text_area :answer
+~ f.select :faq_category_id, FaqCategory.find(:all).collect {|cat| [cat.name, cat.id]}
