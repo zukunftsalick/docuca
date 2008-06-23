@@ -1,14 +1,17 @@
-<% content_for :custom_imports do %>
-	<%= stylesheet_link_tag "faq" %>
-<% end%>
-<h1><%= @category.name %></h1>
+
+<h1><%= @category.name.camelize %><small> (clique na pergunta para visualizar a resposta)</small></h1>
+<%= %>
 <% @faqs.each do |faq|%>
-<p class="faq_list">
-	<div class="faq-question">
-		<%= faq.question %>
+<p class="faq_list" >
+	<div class="faq-question" onclick="Element.toggle('answer_id_<%=faq.id %>');Element.toggle('answer_id_slice_<%=faq.id %>') ">
+		<a href="javascript:void(0);"><%= faq.question%></a>
+		<div class="faq-answer" id="answer_id_slice_<%=faq.id%>"><%= faq.answer[0..300] %>
+			<% if faq.answer.size > 300 %>
+				 <span class="faq-readmore">(clique para ler mais)</strong>
+			<% end %>
+		</div>
 	</div>
-	
-	<div class="faq-answer">
+	<div class="faq-answer" style="display:none;" id="answer_id_<%=faq.id%>" onclick="Element.hide('answer_id_<%=faq.id %>'); Element.show('answer_id_slice_<%=faq.id %>')">
 		<%= faq.answer %>
 	</div>
 </p>

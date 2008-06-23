@@ -2,10 +2,15 @@
 	
 }
 
-.faq_question {
-	
+.faq-question {
+	font-size: 140%;
 }
 
-.faq_answer{
-	
+.faq-answer{
+	padding: 0 15px 15px 15px;
+}
+
+.faq-readmore{
+	cursor: pointer;
+	font-weight: bold;
 }
