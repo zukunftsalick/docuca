@@ -1,0 +1,11 @@
+<% @comments.each do |comment| %>
+	- <%=h comment.comment %><br>
+<% end%>
+<hr/>
+
+
+<% form_for(:comment, :url => object_url )  do |f| %>
+  	<%= render :partial => "form", :locals => { :f => f } %>
+	  <%= submit_tag "Enviar"%>
+<%end%>
+

@@ -1,0 +1,33 @@
+<ul>
+    <li><%= link_to 'Inicial', home_path %></li>
+    <li>
+  		<% if current_user %>
+  			<%= link_to 'Sair', logout_path %>
+  		<% else %>
+  			<%= link_to 'Entrar', '#' , 
+  			:onclick => " Effect.Appear('login_box_form',{ duration: 1.0}); "
+  			%>
+  		<% end %>
+  	</li>
+    <li><%= link_to 'Equipe', team_path %></li>
+    <li><%= link_to 'Relatos', study_cases_path %></li>
+</ul>
+
+<div id='login_box_form' style='display:none;'>
+  
+  <% form_tag account_path do -%>
+  
+    <div>
+      <label for="login">E-mail</label>
+      <%= text_field_tag 'login', @login%>
+    </div>
+
+    <div>
+      <label for="password">Senha</label>
+      <%= password_field_tag 'password', nil %>
+    </div>
+
+    <div class="submit-button"><%= submit_tag 'Entrar' %></div>
+  <% end -%>
+
+</div>

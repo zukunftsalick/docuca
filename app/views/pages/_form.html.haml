@@ -1,0 +1,20 @@
+%div{ :id => 'form_page'}
+  %p
+    %label{:for => "page_title"} 
+    %h2 Título:
+    = f.text_field :title
+    = error_message_on 'page' ,'title'
+
+  %p
+    %label{:for => "page_permalink"} 
+    %h2 Um nome amigável para ligações internas:
+    %p exemplo: relato sobre violência na escola
+    = f.text_field :permalink
+    = error_message_on 'page' ,'permalink'
+  
+  %p
+    %label{:for => "page_content"} 
+    %h2 O conteúdo desta página:
+    = f.text_area :content
+  
+    = f.hidden_field :study_case_id

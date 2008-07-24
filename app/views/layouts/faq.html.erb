@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title><%= yield :custom_title %> Portal de Estudos de Caso</title>
+<%= stylesheet_link_tag "default"%>
+<%= stylesheet_link_tag 'ec' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'growl'%>
+<%= yield :custom_imports %>
+</head>
+
+<body <%= yield :custom_js_events_for_body%> >
+	<div class="global-wrapper">
+		<div class="fixed">
+			<div class="banner">
+				<div class="upper-menu">
+					<div class="border-tleft">
+						<div class="border-tright"></div>
+					</div>
+					<div class="upper-menu-content">
+						<div class="banner-menu">
+		                    <div class="border-left">
+		                        <div class="border-right">
+		                            <%= render :partial => 'layouts/top_menu'%>
+		                        </div>
+		                    </div>
+		                </div>
+					</div>
+					<div class="border-bleft">
+						<div class="border-bright"></div>
+					</div>
+				</div>
+				<a href='/'><img src="/images/logo.png" alt="home" /></a>
+			</div>
+			
+			<%= link_to "<div class='top-faq'></div>", faq_index_path %>
+			<div class="content-wrapper">
+				<div id="sidebar_left">
+					<div class="bg-menu">
+						<%= render :partial => "layouts/faqmenu" %>
+						<div class="faq-menu-footer"></div>
+					</div>
+					<div class="ec-menu"><%= link_to "<img src='/images/bt_ec.jpg' />", study_cases_path, :title=> 'Estudos de Caso' %> </div>
+          <div class="ec-menu"><a href="#" title='Metáfora UCA' alt='Metáfora UCA'><img src="/images/bt_metafora.jpg" alt="" /></a></div>
+				  	<div class="ec-menu"><a href="#" title='Fundamentação Teórica' alt='Fundamentação Teórica'><img src="/images/bt_ft.jpg" alt="" /></a></div>
+				</div>
+				<div id="content">
+					<%= yield %>				
+				</div>
+				<div class="content-footer">
+					<div class="border-bright">
+						<div class="border-bleft">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+<% form_for(:comment, :url => collection_url) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <%= submit_tag "enviar"%>
+<%end%>

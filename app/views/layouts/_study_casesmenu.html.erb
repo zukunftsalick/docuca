@@ -1,0 +1,6 @@
+<ul class="topics">
+	<% @study_cases = study_cases %>
+	<% @study_cases.each do |study_case|%>
+		<li><%= link_to truncate(study_case.name, 100), study_case_path(study_case) %></li>
+	<% end%>	
+</ul>

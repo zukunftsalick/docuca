@@ -1,0 +1,12 @@
+
+<p>
+  <h1> 
+    <a href='<%=show_permalink(@page)%>' title='<%=@page.title %>'> <%= @page.title%></a>
+  </h1> 
+</p>
+<p>
+  <%= @page.content %>
+</p>
+</br>
+
+<%= link_to 'voltar a listagem de páginas', collection_url %>

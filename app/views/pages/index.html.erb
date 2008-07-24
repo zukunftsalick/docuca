@@ -1,0 +1,8 @@
+<h1><%=@study_case.name %></h1>
+<h2>Lista de páginas  </h2>
+<p>Aqui você encontra o material completo deste estudo.</p>
+<br>
+<% @pages.each do |page|%>
+  <div><%= show_truncate_permalink(page) %> - (<%= link_to "editar", edit_object_path(page) %>)</div>
+<% end %>
+<%=(link_to 'Adicionar página', new_object_path) unless !current_user%>
