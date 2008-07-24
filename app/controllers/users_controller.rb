@@ -51,18 +51,18 @@ class UsersController < ApplicationController
             current_user.password = params[:password]
 
             if current_user.save
-              flash[:notice] = "Password successfully updated" 
+              flash[:notice] = "Senha atualizada com sucesso" 
               redirect_to profile_url(current_user.login)
             else
-              flash[:alert] = "Password not changed" 
+              flash[:alert] = "Senha não alterada" 
             end
 
           else
-            flash[:alert] = "New Password mismatch" 
+            flash[:alert] = "Novo erro de senha" 
             @old_password = params[:old_password]
           end
         else
-          flash[:alert] = "Old password incorrect" 
+          flash[:alert] = "Senha antiga incorreta" 
         end
       end
 
@@ -73,9 +73,9 @@ class UsersController < ApplicationController
           @user.forgot_password
           @user.save
           redirect_back_or_default('/')
-          flash[:notice] = "A password reset link has been sent to your email address" 
+          flash[:notice] = "Um email contendo informações de como resetar sua senha foi enviado." 
         else
-          flash[:alert] = "Could not find a user with that email address" 
+          flash[:alert] = "Não existe este email em nosso cadastro" 
         end
       end
 
@@ -90,10 +90,10 @@ class UsersController < ApplicationController
           current_user.password_confirmation = params[:user][:password_confirmation]
           current_user.password = params[:user][:password]
           @user.reset_password
-          flash[:notice] = current_user.save ? "Password reset success." : "Password reset failed." 
+          flash[:notice] = current_user.save ? "Senha resetada com sucesso." : "Senha não foi resetada." 
           redirect_back_or_default('/')
         else
-          flash[:alert] = "Password mismatch" 
+          flash[:alert] = "Erro de senha" 
         end  
       end
 end

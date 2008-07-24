@@ -2,7 +2,7 @@ class StudyCasesController < ResourceController::Base
   #before_filter :admin_required, :except => [:index, :show]
   before_filter :login_required, :except => [:index,:show]
   
-  layout 'default'
+  layout 'study_cases'
   
   def index
     @study_cases = StudyCase.paginate :page => params[:page], :order => 'created_at DESC'

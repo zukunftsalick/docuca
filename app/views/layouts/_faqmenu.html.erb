@@ -1,7 +1,7 @@
 <ul class="topics">
-	<% @faq_categories = FaqCategory.find :all , :order => :name %>
+	<% @faq_categories = faq_categories%>
 	<% @faq_categories.each do |category| %>
-		<li><%= link_to_remote "#{category.name}", 
+		<li><%= link_to_remote truncate(category.name,100), 
 		:update => 'content',
 		:url => {:controller => 'faq', :action => 'show',  :id => category.id} ,
 		:method => :get,
@@ -10,6 +10,10 @@
 		%>
 		<%= image_tag 'spinner.gif',:class=> 'spinner', :id => "spinner_#{category.id}", :style => 'display: none' %>
 		</li>
+		<!-- no ajax - for debugging
+		<li>
+			<%= link_to "#{category.name} (non-AJAX)",faq_path(category) %>
+		</li> -->
 	<% end%>
 </ul>
 

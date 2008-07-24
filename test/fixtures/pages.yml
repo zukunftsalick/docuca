@@ -1,0 +1,12 @@
+one:
+  id: 1
+  title: MyString
+  permalink: MyString
+  content: MyText
+  study_case_id: 1
+two:
+  id: 2
+  title: MyString
+  permalink: MyString
+  content: MyText
+  study_case_id: 1

@@ -10,10 +10,10 @@ svn+ssh://rubyforge.org/var/svn/donortrust
 2007-10-16T21:14:07.245064Z
 1285
 desireem
-
-
+has-props
+has-prop-mods
 svn:special svn:externals svn:needs-lock
-
+svn:externals
 
 
 
@@ -38,14 +38,14 @@ file
 959
 sterrym
 
-README
+rakefile
 file
 
 
 
 
 2008-05-01T16:37:40.000000Z
-beab08b305d75785b40c4247360f50c0
+fc2a3232310f9a5a868a6456e02aa8e9
 2007-10-01T16:19:31.445532Z
 959
 sterrym
@@ -65,14 +65,14 @@ sterrym
 lib
 dir
 
-rakefile
+README
 file
 
 
 
 
 2008-05-01T16:37:40.000000Z
-fc2a3232310f9a5a868a6456e02aa8e9
+beab08b305d75785b40c4247360f50c0
 2007-10-01T16:19:31.445532Z
 959
 sterrym

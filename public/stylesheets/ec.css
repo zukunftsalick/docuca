@@ -2,14 +2,132 @@
     border: 0px;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans;
-    font-size: 10pt;
+  	font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
     color: #3a3a3c;
+}
+body { 
+    background: #d1d0ce url(images/body_bg.jpg) repeat-x top left;
+    padding-bottom: 30px;
+}
+
+/* MAIN TAGS */
+h1,h2,h3,h4 { 
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #f79021;
+}
+
+h1 { font-size: 180%; }
+
+h2 { 
+	font-size: 13px; 
+	text-decoration: none;
+	color: #295971; 
+}
+
+input{
+	border: 2px solid #D8D8DA;
+}
+textarea{
+	border: 2px solid #D8D8DA;
 }
 
 .spinner{
 	padding-left: 10px;
 }
+
+.promo {
+    background: url(/images/banner.jpg) no-repeat top left;
+    width: 912px;
+    height: 297px;
+    border-bottom: solid 2px white;
+}
+
+
+    .green, .purple, .blue { 
+        text-align: right; 
+        width: 295px;
+        float: left;
+        margin-top: 10px;
+
+    }
+    
+    .green { margin-right: 7px; margin-left: 2px; }
+    .purple { margin-right: 10px; }
+
+    .green p, .purple p, .blue p { 
+        color: #FFFFFF; 
+        font-weight: bold;
+    }
+        
+    .green h1 a, .purple h1 a, .blue h1 a {
+        font-size: 100%;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .green h1 a { color: #497d3b; }
+    .purple h1 a { color: #722843; }
+    .blue h1 a { color: #146791; }
+
+    .green h1 a:hover { background-color: #c8eba3; }
+    .purple h1 a:hover { background-color: #f292af; }
+    .blue h1 a:hover { background-color: #b5dbf4; }
+
+
+.promo-menu {
+    background: url(/images/topics.jpg) no-repeat top left;
+    width: 912px;
+    height: 115px;
+}
+
+.banner-menu {
+	background: url(/images/top_menu.jpg) repeat-x top left;
+	height: 63px;
+	width: 350px;
+	float: right;
+}
+
+.banner-menu ul { padding-top: 20px; padding-left: 10px; }
+.banner-menu ul li { 
+	display: inline; 
+	font-weight: bold; 
+}
+.banner-menu ul li a {
+	text-decoration: none;
+	font-size: 120%;
+	color: #e10c78;
+	padding: 0 10px;
+}
+.banner-menu ul li a:hover { background: #DDD; }
+.banner-menu .border-left { background: url(/images/top_menu_left.jpg) no-repeat top left; }
+.banner-menu .border-left .border-right { 
+	height: 63px; 
+	background: url(/images/top_menu_right.jpg) no-repeat top right; 
+}
+
+#login_box_form{
+	width:215px;
+	height:112px;
+	position:absolute;
+	top:98px;
+	right:170px;
+	background: url(/images/login_box.gif) no-repeat top left; 
+	padding-top:40px;
+	padding-left:23px;
+}
+#login_box_form div { display: block; }
+#login_box_form div label{
+	font-size: 12pt;
+	color: #6FBF46;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#login_box_form div input[type=text], #login_box_form div input[type=password]{
+	margin-left:20px;
+	width: 100px;
+}
+
+#login_box_form div.submit-button { text-align: right; padding-right: 40px; }
 
 body {
     background: #d2cfcf url(/images/body_bg.jpg) repeat-x top left;
@@ -31,6 +149,12 @@ body {
             width: 914px;
             height: 111px;
         }
+		.top-study_cases { 
+	        background: url(/images/study_case_top.png) no-repeat;
+	        width: 914px;
+	        height: 111px;
+	    }
+
 
 .upper-menu {
     float: right;
@@ -47,27 +171,33 @@ body {
 
 /* CONTENT OF THE SITE */
 #sidebar_left {
-    width: 273px;
+    width: 271px;
     float: left;
 }
 
-    #sidebar_left .faq-menu {
+    #sidebar_left .bg-menu {
         background: #d3d1d1 url(/images/bg_menu.jpg) repeat-x top left;
         min-height: 300px;
     }
     
-        .faq-menu .faq-menu-footer { 
+        .bg-menu .faq-menu-footer { 
             background: url(/images/faq_menu_footer.jpg) no-repeat top left;
             width: 272px;
             height: 23px;
         }
+		.bg-menu .study_cases-menu-footer{
+			background: url(/images/study_case_menu_footer.jpg) no-repeat top left;
+			width: 272px;
+            height: 23px;
+		}
 
     #sidebar_left .ec-menu {
         background: url(/images/bt_ec.jpg) no-repeat top left;
         width: 272px;
         height: 43px;
     }
-
+	
+	/*
     #sidebar_left .metafora-menu {
         background: url(/images/bt_metafora.jpg) no-repeat top left;
         width: 272px;
@@ -80,7 +210,7 @@ body {
         width: 272px;
         height: 43px;
     }
-
+	*/
         ul.topics { padding-top: 15px; }
         ul.topics li { 
             list-style: none; 
@@ -88,10 +218,38 @@ body {
         }
 
         ul.topics li:hover { 
-            background: #f7f8f8; 
             padding: 10px; 
+			background: url(/images/arrow_grey.jpg) no-repeat 90% 50%;
+			background-color: #f7f8f8; 
         }
     
+		#sidebar-right { 
+		    float: right; 
+		    width: 287px; 
+		    background: #ebc586 url(/images/sidebar_bg.jpg) repeat-x top left;
+		}
+
+		    #sidebar-right .border-bottom h1 {
+		        color: #7c5c42;
+		    }
+
+		    #sidebar-right .border-top {
+		        background: url(/images/sidebar_top.jpg) no-repeat bottom left;
+		        height: 22px;
+		    }
+
+		    #sidebar-right .border-bottom {
+		        padding: 10px 20px;
+		        min-height: 464px;
+		        padding-bottom: 30px;
+		        background: url(/images/sidebar_bottom.jpg) no-repeat bottom left;
+		    }
+
+		    .sidebar-block { margin-top: 10px; }
+		    div.sidebar-block h2 {
+		        color: #a95c26;
+		        font-size: 110%;
+		    }
 
 #content {
     padding-left: 321px;
@@ -100,13 +258,117 @@ body {
     min-height: 500px;
     background: #f7f8f8;
 }
+#content-column { 
+    margin-top: 20px;
+    padding-right: 303px;
+}
+
+    .content-box { 
+        background: #f7f8f8;
+        /*min-height: 506px;*/
+    }
+
+    .content-box .content { padding: 5px 20px; }    
+    .content-box .border-tleft {
+        background: url(/images/content_tl.jpg) no-repeat top left;
+    }
+
+    .content-box .border-tright {
+        background: url(/images/content_tr.jpg) no-repeat top right;
+        height: 21px;
+    }
+    
+    .content-box .border-bleft {
+        background: url(/images/content_bl.gif) no-repeat bottom left;
+    }
+
+    .content-box .border-bright {
+        background: url(/images/content_br.gif) no-repeat bottom right;
+        height: 21px;
+    }
+    
+    .topic p { 
+        color: #3a3a3c;
+        line-height: 20px;
+    }
+    
+    .topic h2.topic-title a {
+        display: block;
+        color: #3a3a3c;
+        text-decoration: none;
+        background: url(/images/arrow.jpg) no-repeat top left;
+        font-size: 160%;
+        padding-left: 30px;
+        margin-top: 20px;
+    }
+    
+    .topic h2 a:hover {
+        background-color: #EAEAEA;
+    }
+
 
 .content-footer { background: url(/images/content_b.gif) repeat-x top left; }
     .content-footer .border-bright { background: url(/images/content_br.gif) no-repeat top right; }
     .content-footer .border-bleft { background: url(/images/content_bl.gif) no-repeat top left; }
+
+	.footer-box {
+	    background: #fbb570 url(/images/footer_bg.jpg) repeat-x bottom left;
+	    min-height: 103px;
+	    clear: both;
+	    margin-top: 15px;
+	}
+
+	    .footer-box .content {
+	        min-height: 67px;
+	    }
+
+	    .footer-box .border-tleft {
+	        background: url(/images/footer_tl.jpg) no-repeat top left;
+	        height: 16px;
+	    }
+
+	    .footer-box .border-bleft {
+	        background: url(/images/footer_bl.jpg) no-repeat bottom left;
+	        height: 20px;
+	    }
+
+	    .footer-box .border-tright {
+	        background: url(/images/footer_tr.jpg) no-repeat top right;
+	        height: 16px;
+	    }
+
+	    .footer-box .border-bright {
+	        background: url(/images/footer_br.jpg) no-repeat bottom right;
+	        height: 20px;
+	    }
 
 /* TEXT CONFIG */
 h1 { font-size: 180%; font-weight: normal; padding: 15px 0 15px 0; }
 h2 { font-size: 150%; }
 h3 { font-size: 120%; }
 
+
+/* pages */
+#form_page{
+	width: 550px;
+}
+#form_page input, textarea{
+	width:100%;
+}
+
+/* errors */
+.formError{
+	background-color: red;
+	color: #fff;
+	width:100%;
+	padding:1px;
+}
+
+.fieldWithErrors textarea {
+	border: 1px solid red;
+	display:inline;
+}
+.fieldWithErrors input {
+	border: 1px solid red;
+	display:inline;
+}

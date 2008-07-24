@@ -3,10 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title><%= yield :custom_title %> Portal de Estudos de Caso</title>
-<%= stylesheet_link_tag "default"%>
-<%= stylesheet_link_tag 'ec' %>
-<%= javascript_include_tag :defaults %>
-<%= yield :custom_imports %>
+  <%= stylesheet_link_tag "default"%>
+  <%= stylesheet_link_tag 'ec' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'growl'%>
+  <%= yield :custom_imports %>
+  
+  <%= growl_notification  %>
 </head>
 
 <body <%= yield :custom_js_events_for_body%> >
@@ -18,35 +21,53 @@
 						<div class="border-tright"></div>
 					</div>
 					<div class="upper-menu-content">
-						<img src="/images/menu_top.jpg" alt="" />
+						<div class="banner-menu">
+		                    <div class="border-left">
+		                        <div class="border-right">
+		                            <%= render :partial => 'layouts/top_menu'%>
+		                        </div>
+		                    </div>
+		                </div>
 					</div>
 					<div class="border-bleft">
 						<div class="border-bright"></div>
 					</div>
 				</div>
-				<img src="/images/logo.png" alt="" />
+				
+				
+				<a href='/'><img src="/images/logo.png" alt="home" /></a>
+				
+				<div class="">
+            <div class="promo"></div>
+            <div class="promo-menu">
+                <div class="green">
+                    <h1><a href="#">Décio Tatizana</a></h1> 
+                    <p>Metáfora UCA<p>
+                </div>
+                <div class="purple">
+                    <h1>
+                      <%= link_to 'Piloto UCA', faq_index_path %>
+                    </h1>
+                    <p>Perguntas e respostas<p>
+                </div>
+                <div class="blue">
+                    <h1><a href="#">Léa Fagundes</a></h1>
+                    <p>Estudos de Casos<p>
+                </div>
+            </div>
+        </div>
+				<div class="content-wrapper">
+				  
+					<%= yield %>
+				</div>
 			</div>
-			
-			<a href='/faq'><div class="top-<%= params[:controller]%>"></div></a>
-			<div class="content-wrapper">
-				<div id="sidebar_left">
-					<div class="<%= params[:controller]%>-menu">
-						<%= render :partial => "layouts/#{params[:controller]}menu" %>
-						<div class="<%= params[:controller]%>-menu-footer"></div>
-					</div>
-					<div class="ec-menu"><a href="#"><img src="/images/bt_ec.jpg" alt="" /></a></div>
-					<div class="metafora-menu"></div>
-					<div class="ft-menu"></div>
-				</div>
-				<div id="content">
-					<%= yield %>				
-				</div>
-				<div class="content-footer">
-					<div class="border-bright">
-						<div class="border-bleft">&nbsp;</div>
-					</div>
-				</div>
-			</div>
+			<div class="footer-box">
+          <div class="border-tleft"><div class="border-tright"></div></div>
+          <div class="content">
+
+          </div>
+          <div class="border-bleft"><div class="border-bright"></div></div>
+      </div>
 		</div>
 	</div>
 

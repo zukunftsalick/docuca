@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
  
   map.resources :faq_categories, :has_many => :faqs
   
@@ -14,15 +15,21 @@ ActionController::Routing::Routes.draw do |map|
  
   map.resources :study_cases, :has_many => :comments do |study_cases|
     study_cases.resources :events
+    study_cases.resources :pages
+    map.connect '/study_cases/:study_case_id/pages/:id', :controller => 'pages', :action => 'show'
   end
   
   map.resources :comments
   
+  #map.resources :pages
+  
+
   
   map.resources :events, :member => {:timeline => :get}
   
   
   map.home '/home', :controller => 'home', :action =>'index'
+  map.team '/team', :controller => 'home', :action => 'team'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login  '/login',  :controller => 'accounts', :action => 'new'
   map.logout '/logout', :controller => 'accounts', :action => 'destroy'

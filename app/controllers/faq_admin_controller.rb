@@ -1,6 +1,5 @@
 class FaqAdminController < ApplicationController
   before_filter :login_required
-  #layout 'default'
   def index
     @faqs = Faq.find :all
   end

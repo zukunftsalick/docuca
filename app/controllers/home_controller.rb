@@ -4,5 +4,9 @@ class HomeController < ResourceController::Base
   def index
     
   end
+  
+  def team
+    
+  end
 
 end

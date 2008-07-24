@@ -1,7 +1,18 @@
 class CommentsController < ResourceController::Base
-  
-  before_filter :login_required
+  belongs_to :study_case, :faq
+  #before_filter :login_required, :only => [:delete]
   layout 'default'
   
-  belongs_to :study_case, :faq
+  
+  index do
+   
+    respond_to do |wants|
+      wants.js{ render :layout => false}
+    end
+  end
+  
+  create do
+    wants.html {redirect_to :back}
+  end
+  
 end

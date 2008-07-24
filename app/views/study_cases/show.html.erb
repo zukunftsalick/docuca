@@ -1,27 +1,31 @@
-<% content_for :custom_js_imports do%>
-<script src="http://simile.mit.edu/timeline/api/timeline-api.js" type="text/javascript"></script>
-<script src="/javascripts/timeline.js" type="text/javascript"></script>
-<% end %>
-<% content_for :custom_js_events_for_body do %>
- onload="onLoad();" onresize="onResize();" 
-<% end %>
-
-
-<div id="uca_timeline"></div>
-
-
-
 <p>
-  <strong>Name:</strong><%=h @study_case.name %>
+  <h1><%=h @study_case.name %> </h1>
 </p>
 <p>
-  <strong>User:</strong><%=h @study_case.user.name%>
+  <%=h @study_case.description %>
 </p>
+<br>
+<h3>Ações disponíveis neste estudo de caso:</h3>
+<p><%= link_to 'páginas deste estudo de caso', study_case_pages_path(@study_case) %></p>
 <p>
-  <strong>Description:</strong><%=h @study_case.description %>
+	<%= link_to_remote "Comentários &raquo; (#{@study_case.comments.size})", 
+	:update => "study_case_comment_id_#{@study_case.id}",
+	:url => { 
+	  :controller=> :comments,
+	  :action => :index, 
+	  :commentary_type => @study_case.class, 
+	  :commentary_id => @study_case.id, 
+	  :study_case_id => @study_case.id
+	},
+	:method => :get,
+	:before   => %(Element.show("spinner_comments_#{@study_case.id}"), Element.toggle('study_case_comment_id_#{@study_case.id}')),
+ 	:success  => %(Element.hide("spinner_comments_#{@study_case.id}"))
+	%>
+	<%= image_tag 'spinner.gif',:class=> 'spinner', :id => "spinner_comments_#{@study_case.id}", :style => 'display: none' %>
+	<div id='study_case_comment_id_<%=@study_case.id%>' style='display:none'>
+  </div>
 </p>
-<%= link_to 'Comentar', study_case_comments_path(@study_case) %>
-<%= link_to 'Inserir evento', study_case_events_url(@study_case)%>
-<%= link_to 'Edit', edit_object_url %>
-|
-<%= link_to 'Back', collection_url %>
+
+<!-- <p><%= link_to 'Inserir evento', study_case_events_url(@study_case)%></p> -->
+<p><%= link_to 'Editar descrição deste estudo', edit_object_url %></p>
+<p><%= link_to 'Voltar', collection_url %></p>

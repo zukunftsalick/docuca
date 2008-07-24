@@ -1,5 +1,7 @@
 class FaqController < ResourceController::Base
-  layout 'default'
+  layout 'faq'
+  
+  
   def index
    
   end
@@ -7,7 +9,12 @@ class FaqController < ResourceController::Base
   def show
     @category = FaqCategory.find params[:id]
     @faqs = Faq.find(:all, :conditions => ["faq_category_id = ? ", params[:id]])
-    render :layout => false
+    respond_to do |wants|
+      wants.html 
+      wants.js {
+          render :layout => false
+        }
+    end
   end
   
 end

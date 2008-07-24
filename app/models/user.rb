@@ -79,7 +79,11 @@ class User < ActiveRecord::Base
   # This will also let us return a human error message.
   #
   def self.authenticate(login, password)
-    u = find :first, :conditions => ['login = ? and activated_at IS NOT NULL', login] # need to get the salt
+    if login.index(RE_EMAIL_OK)
+      u = find :first, :conditions => ['email = ? and activated_at IS NOT NULL', login] 
+    else
+      u = find :first, :conditions => ['login = ? and activated_at IS NOT NULL', login] # need to get the salt
+    end
     u && u.authenticated?(password) ? u : nil
   end
 
