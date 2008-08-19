@@ -4,17 +4,34 @@
     %h2 Título:
     = f.text_field :title
     = error_message_on 'page' ,'title'
-
+  %br
   %p
     %label{:for => "page_permalink"} 
     %h2 Um nome amigável para ligações internas:
     %p exemplo: relato sobre violência na escola
     = f.text_field :permalink
     = error_message_on 'page' ,'permalink'
-  
+  %br
   %p
     %label{:for => "page_content"} 
     %h2 O conteúdo desta página:
     = f.text_area :content
   
     = f.hidden_field :study_case_id
+  %br
+  %p
+    %label{:for => 'page_event'}
+    %h2 Evento
+    %p Esta página trata de eventos onde o tempo (datas) são importantes ?
+    %br
+    = f.radio_button :event, 'false', :checked => true
+    %span não
+    = f.radio_button :event, 'true' 
+    %span sim
+  %br
+  %br  
+  %p
+    %label{:for => 'page_parent_id'}
+    %h2 Página Pai
+    %p Caso esta página seja filha de outra página, selecione a página pai
+    = f.select :parent_id,  @study_case.pages.collect{|p|[  p.title, p.id]}, {:include_blank => true}

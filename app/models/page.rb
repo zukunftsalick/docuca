@@ -3,4 +3,7 @@ class Page < ActiveRecord::Base
   validates_presence_of :title, :message => "não pode ser em branco."
   validates_presence_of :content, :message => "não pode ser em branco."
   validates_uniqueness_of :permalink, :message => "deve ser único."
+  
+  acts_as_tree :order => 'title' 
+  
 end

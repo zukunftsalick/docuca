@@ -1,9 +1,8 @@
 
-<%= render :partial => 'study_case' %>
-
+  <%= render :partial => 'study_case' ,:collection => @study_cases %>
 
 <br/>
 <%= will_paginate @study_cases %>
 
-<%= (link_to 'adicionar estudo de caso', new_object_url) if current_user %>
+<%= (link_to 'Adicionar estudo de caso', new_object_url) if current_user %>
 

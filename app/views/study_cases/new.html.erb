@@ -1,12 +1,13 @@
-<h1>New Study Case</h1>
+<h1>Novo Estudo de Caso</h1>
 
 <%= error_messages_for :study_case %>
 
 <% form_for(:study_case, :url => collection_url) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
+  <br>
   <p>
-    <%= submit_tag "Create" %>
+    <%= submit_tag "Criar" %>
   </p>
 <% end %>
 <br/>
-<%= link_to 'Back', collection_url %>
+<%= link_image_back(collection_url) %>

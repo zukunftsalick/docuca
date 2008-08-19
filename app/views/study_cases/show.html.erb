@@ -1,14 +1,12 @@
-<p>
-  <h1><%=h @study_case.name %> </h1>
-</p>
-<p>
-  <%=h @study_case.description %>
-</p>
-<br>
-<h3>Ações disponíveis neste estudo de caso:</h3>
-<p><%= link_to 'páginas deste estudo de caso', study_case_pages_path(@study_case) %></p>
-<p>
-	<%= link_to_remote "Comentários &raquo; (#{@study_case.comments.size})", 
+
+<div class='study_case_actions'>
+  <h1>Você pode:</h1>
+  <% if logged_in? %>
+    <div><%= link_image_study_case_edit(edit_object_path, 'Editar descrição deste estudo')%></div>
+  <% end %> 
+  <div><%= link_to image_tag('pages.png', :title => 'Páginas do Estudo de Caso', :alt => 'Páginas do Estudo de Caso')+" Visualizar Páginas (#{@study_case.pages.size})", study_case_pages_path(@study_case)%></div>
+  
+  <%= link_to_remote image_tag('comment_add.png', :alt => 'Comentários ', :title => 'Comentários')+" Ler/Deixar Comentários (#{@study_case.comments.size})", 
 	:update => "study_case_comment_id_#{@study_case.id}",
 	:url => { 
 	  :controller=> :comments,
@@ -18,14 +16,25 @@
 	  :study_case_id => @study_case.id
 	},
 	:method => :get,
-	:before   => %(Element.show("spinner_comments_#{@study_case.id}"), Element.toggle('study_case_comment_id_#{@study_case.id}')),
+	:before   => %(Element.show("spinner_comments_#{@study_case.id}");
+	 Effect.Appear("study_case_comment_id_#{@study_case.id}", {duration : 1.0})),
  	:success  => %(Element.hide("spinner_comments_#{@study_case.id}"))
 	%>
 	<%= image_tag 'spinner.gif',:class=> 'spinner', :id => "spinner_comments_#{@study_case.id}", :style => 'display: none' %>
-	<div id='study_case_comment_id_<%=@study_case.id%>' style='display:none'>
-  </div>
+</div>
+<div id='study_case_comment_id_<%=@study_case.id%>' style='display:none'></div>   
+<h1><%=h @study_case.name %></h1> 
+<p>
+  <%=h @study_case.description %>
 </p>
+  
+
+
+
+  
+
+<br>
 
 <!-- <p><%= link_to 'Inserir evento', study_case_events_url(@study_case)%></p> -->
-<p><%= link_to 'Editar descrição deste estudo', edit_object_url %></p>
-<p><%= link_to 'Voltar', collection_url %></p>
+<br>
+<%= link_image_back(collection_url)%>

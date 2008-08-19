@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080709201512) do
+ActiveRecord::Schema.define(:version => 20080725200020) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentary_id",   :limit => 11
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(:version => 20080709201512) do
     t.integer  "study_case_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id",     :limit => 11
+    t.boolean  "event"
+    t.datetime "event_start"
+    t.datetime "event_end"
   end
 
   create_table "study_cases", :force => true do |t|

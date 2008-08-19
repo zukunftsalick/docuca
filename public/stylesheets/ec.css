@@ -12,6 +12,13 @@ body {
 }
 
 /* MAIN TAGS */
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
 h1,h2,h3,h4 { 
     font-family: Arial, Helvetica, sans-serif; 
     color: #f79021;
@@ -109,12 +116,17 @@ textarea{
 #login_box_form{
 	width:215px;
 	height:112px;
-	position:absolute;
-	top:98px;
-	right:170px;
+	position:relative;
+	top:20px;
+	left:60px;
 	background: url(/images/login_box.gif) no-repeat top left; 
 	padding-top:40px;
 	padding-left:23px;
+}
+
+#login_box_form span{
+	float:left;
+	padding-top:3px;
 }
 #login_box_form div { display: block; }
 #login_box_form div label{
@@ -347,14 +359,29 @@ h1 { font-size: 180%; font-weight: normal; padding: 15px 0 15px 0; }
 h2 { font-size: 150%; }
 h3 { font-size: 120%; }
 
+/* study case */
+.study_case_actions{
+	padding-top: 10px;
+}
+
+/* comments */
+.comment_form_suc{
+	padding-top:5px;
+	width: 150px;
+	height: 20px;
+	text-align:center;
+	background:green;
+	color:white;
+}
 
 /* pages */
 #form_page{
 	width: 550px;
 }
-#form_page input, textarea{
+#form_page input, textarea, select{
 	width:100%;
 }
+
 
 /* errors */
 .formError{

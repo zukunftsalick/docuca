@@ -10,9 +10,9 @@ Gr0wl.Base = Class.create({
     queue:[],
     
 	options: {
-		image: 'images/var-logo-60.png',
-		title: 'Growl.Smoke<br/>Script.aculo.us mod',
-		text: 'http://blog.var.cc/static/growl/',
+		image: '',
+		title: '',
+		text: '',
 		duration: 1.5
 	},
 	
@@ -182,8 +182,8 @@ Gr0wl.Bezel = Class.create(Gr0wl.Base, {
 
 var Growl =  {
     initialize: function() {
-        this.oBezel = new Gr0wl.Bezel('/images/bezel.png');
-        this.Bezel =  this.oBezel.show.bind(this.oBezel);
+        //this.oBezel = new Gr0wl.Bezel('/images/bezel.png');
+        //this.Bezel =  this.oBezel.show.bind(this.oBezel);
         this.oSmoke = new Gr0wl.Smoke('/images/smoke.png');
         this.Smoke = this.oSmoke.show.bind(this.oSmoke);
     }

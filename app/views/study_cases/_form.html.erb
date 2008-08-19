@@ -1,9 +1,11 @@
-<p>
-  <label for="study_case_name">Name:</label>
-  <%= f.text_field :name , :disabled => !@study_case.name.nil?%>
-</p>
- <%= f.hidden_field :user_id , :value => @study_case.user_id.nil? ? (session[:user_id]) : @study_case.user_id%>
-<p>
-  <label for="study_case_description">Description:</label>
-  <%= f.text_area :description %>
-</p>
+<div id='form_page'>
+  <p>
+    <label for="study_case_name"><h2>Nome:</h2></label>
+    <%= f.text_field :name , :disabled => !@study_case.name.nil?%>
+  </p>
+  <%= f.hidden_field :user_id , :value => @study_case.user_id.nil? ? (session[:user_id]) : @study_case.user_id%>
+  <p>
+    <label for="study_case_description"><h2>Descrição:</h2></label>
+    <%= f.text_area :description %>
+  </p>
+</div>

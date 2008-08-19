@@ -5,14 +5,14 @@ class CommentsController < ResourceController::Base
   
   
   index do
-   
     respond_to do |wants|
       wants.js{ render :layout => false}
     end
   end
   
   create do
-    wants.html {redirect_to :back}
+    wants.js {render :layout => false}
+    #wants.html{redirect_to :back}
   end
   
 end

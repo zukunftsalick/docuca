@@ -1,13 +1,12 @@
-<% @study_cases.each do |study_case|%>
+
 <div class='study_case'>
-	<h1 class='study_case_name'><%= link_to study_case.name.camelize , object_url(study_case) %> - 
+	<h1 class='study_case_name'><%= link_to study_case.name.camelize , object_url(study_case) %>
 	<% if logged_in?%>
-		 (<%= (link_to 'editar', edit_object_url(study_case)) %>)
+		<%= link_image_study_case_edit(edit_object_path(study_case)) %>
 	<% end %>
 	</h1>
 	<p>
-		<%= study_case.description %>
+		<%= truncate(study_case.description, 300) %>
 	</p>
-	<span> <%=h study_case.user.name %></span>
+
 </div>
-<% end %>

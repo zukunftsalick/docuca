@@ -26,7 +26,12 @@
       <label for="password">Senha</label>
       <%= password_field_tag 'password', nil %>
     </div>
-
+    <span >
+    <%= link_to_remote 'Esqueci minha senha', 
+    :update => 'login_box_form',
+    :url => { :controller => :users, :action => 'forgot_password'  },
+    :method => :get
+    %></span>
     <div class="submit-button"><%= submit_tag 'Entrar' %></div>
   <% end -%>
 

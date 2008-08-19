@@ -39,7 +39,11 @@ class AccountsController < ApplicationController
 protected
   # Track failed login attempts
   def note_failed_signin
-    flash[:error] = "Ooops, algo caiu! Não pudemos logar você como '#{params[:login]}'"
+    if params[:login].empty?
+      flash[:error] = "Um erro occoreu ao logar você como #{params[:login]}"
+    else
+      flash[:error] = "Um erro occoreu ao logar você como #{params[:login]}"
+    end
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 end

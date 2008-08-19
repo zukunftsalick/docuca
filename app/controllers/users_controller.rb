@@ -68,15 +68,20 @@ class UsersController < ApplicationController
 
       #gain email address
       def forgot_password
+        
+        render :layout => false if request.get?
         return unless request.post?
         if @user = User.find_by_email(params[:user][:email])
           @user.forgot_password
           @user.save
-          redirect_back_or_default('/')
-          flash[:notice] = "Um email contendo informações de como resetar sua senha foi enviado." 
+          #redirect_back_or_default('/')
+          #flash[:notice] = "Um email contendo informações de como resetar sua senha foi enviado." 
+          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: 'Um email contendo informações de como resetar sua senha foi enviado.', duration: 5.0 }); $('login_box_form').hide();</script>"
         else
-          flash[:alert] = "Não existe este email em nosso cadastro" 
+          #flash[:alert] = "Não existe este email em nosso cadastro" 
+          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: 'Não existe este email em nosso cadastro.', duration: 5.0 });</script>"
         end
+        
       end
 
       #reset password

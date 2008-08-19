@@ -1,11 +1,14 @@
 <% @comments.each do |comment| %>
-	- <%=h comment.comment %><br>
+	<%= image_tag( 'user_comment.png', :alt=> 'Comentário')%> <%=h comment.comment %><br>
 <% end%>
 <hr/>
 
-
-<% form_for(:comment, :url => object_url )  do |f| %>
+<div id='comment_form'>
+<% remote_form_for(
+  :comment, 
+  :url => object_url
+ )  do |f| %>
   	<%= render :partial => "form", :locals => { :f => f } %>
 	  <%= submit_tag "Enviar"%>
 <%end%>
-
+</div>
