@@ -1,0 +1,5 @@
+<% if @pages.size > 0 %>
+  <%= options_from_collection_for_select(@pages, "id", "title") %>
+<% else %>
+  
+<%end%>

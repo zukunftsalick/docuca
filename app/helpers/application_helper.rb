@@ -21,7 +21,7 @@ module ApplicationHelper
   
   def growl_notification
     if msg = flash[:error] || flash[:notice] 
-      javascript_tag "window.onload=function() { Growl.Smoke({ title: \"Mensagem do Portal UCA\", text: \"<h6 style='color:#fff;font-size:90%;'>"+msg+"</h6>\", duration: 5.0 }); }"
+      javascript_tag "window.onload=function() { Growl.Smoke({ title: \"Mensagem do Portal UCA\", text: \"<h6 class='growl_msg'>"+msg+"</h6>\", duration: 5.0 }); }"
     end
   end
   

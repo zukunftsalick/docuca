@@ -6,6 +6,7 @@
 	border:				1px solid #999999;
 	background-color:	#EEEEEE;
 	padding:			5px;
+	margin-left:100px;
 }
 
 .datepickerControl td {
@@ -105,4 +106,9 @@
 
 .datepickerControl td.current:hover {
 	background-color:	#EBC2C0;
+}
+
+/* custom */
+.inputExtension{
+	
 }

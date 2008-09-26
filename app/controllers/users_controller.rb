@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       flash[:error] = "Código de ativação inválido ou incompleto. Verifique a URL em seu email!"
       redirect_back_or_default('/login')
     else 
-      flash[:error]  = " Não pudemos encontrar usuário com este código de ativação -- Cheque seu email ou tente efetuar login."
+      flash[:error]  = " Não pudemos encontrar usuário com este código de ativação -- Cheque seu email."
       redirect_back_or_default('/login')
     end
   end
@@ -51,18 +51,18 @@ class UsersController < ApplicationController
             current_user.password = params[:password]
 
             if current_user.save
-              flash[:notice] = "Senha atualizada com sucesso" 
+              flash[:notice] = "Senha atualizada com sucesso." 
               redirect_to profile_url(current_user.login)
             else
-              flash[:alert] = "Senha não alterada" 
+              flash[:alert] = "Senha não alterada." 
             end
 
           else
-            flash[:alert] = "Novo erro de senha" 
+            flash[:alert] = "Novo erro de senha." 
             @old_password = params[:old_password]
           end
         else
-          flash[:alert] = "Senha antiga incorreta" 
+          flash[:alert] = "Senha antiga incorreta." 
         end
       end
 
@@ -74,12 +74,10 @@ class UsersController < ApplicationController
         if @user = User.find_by_email(params[:user][:email])
           @user.forgot_password
           @user.save
-          #redirect_back_or_default('/')
-          #flash[:notice] = "Um email contendo informações de como resetar sua senha foi enviado." 
-          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: 'Um email contendo informações de como resetar sua senha foi enviado.', duration: 5.0 }); $('login_box_form').hide();</script>"
+          #redirect_back_or_default('/')         
+          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: '<h6 class='growl_msg'>Um email contendo informações de como resetar sua senha foi enviado.</h6>', duration: 5.0 }); $('login_box_form').hide();</script>"
         else
-          #flash[:alert] = "Não existe este email em nosso cadastro" 
-          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: 'Não existe este email em nosso cadastro.', duration: 5.0 });</script>"
+          render :text => "<script>Growl.Smoke({ title: 'Mensagem do Portal UCA', text: '<h6 class='growl_msg'>Não existe este email em nosso cadastro.</h6>', duration: 5.0 });</script>"
         end
         
       end
@@ -98,7 +96,7 @@ class UsersController < ApplicationController
           flash[:notice] = current_user.save ? "Senha resetada com sucesso." : "Senha não foi resetada." 
           redirect_back_or_default('/')
         else
-          flash[:alert] = "Erro de senha" 
+          flash[:alert] = "Erro de senha." 
         end  
       end
 end

@@ -6,6 +6,12 @@ class StudyCasesController < ResourceController::Base
   
   def index
     @study_cases = StudyCase.paginate :page => params[:page], :order => 'created_at DESC'
+    
+    respond_to do |format|
+      format.js{  render :partial => "study_cases"  }
+      format.html{  }
+    end
+    
   end
   
   
@@ -26,4 +32,15 @@ class StudyCasesController < ResourceController::Base
       end
     end
   end
+  
+  
+  def pages
+    Page.find(:all)
+    respond_to do |format|
+      format.js{
+        render :text => "<option>bla</option>"
+      }
+    end
+  end
+  
 end

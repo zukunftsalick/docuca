@@ -69,5 +69,5 @@ Rails::Initializer.run do |config|
 end
 
 require 'will_paginate'
-SITE="http://localhost:3000"
-STUDY_CASE_TYPES = %w(intervenção turma estudante PA comunidade escola)
+
+SITE="http://localhost:3001"

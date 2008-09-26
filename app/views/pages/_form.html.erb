@@ -1,0 +1,52 @@
+<div id='form_page'>
+  <p>
+    <label for='page_title'></label>
+    <h2>Título:</h2>
+    <%= f.text_field :title%>
+    <%= error_message_on 'page' ,'title' %>
+  </p>
+  <br>
+  <p>
+    <label for='page_permalink'></label>
+    <h2>Um nome amigável para ligações internas:</h2>
+    <p>exemplo: relato sobre violência na escola</p>
+    <%= f.text_field :permalink %>
+    <%= error_message_on 'page' ,'permalink' %>
+  </p>
+  <br>
+  <p>
+    <label for='page_content'></label>
+    <h2>O conteúdo desta página:</h2>
+    <%= f.text_area :content %>
+    <%= error_message_on 'page' ,'content' %>
+  </p>
+  <br>
+  <p>
+    <label for='page_parent_id'></label>
+    <h2>Página Pai</h2>
+    <p>Caso esta página seja filha de outra página, selecione a página pai:</p>
+    <%= f.select :parent_id,  @study_case.pages.collect{|p|[  p.title, p.id]}, {:include_blank => true} %>
+    
+  </p>
+  <br>
+  <p>
+    <label for='page_event'></label>
+    <h2>Evento</h2>
+    <p>Esta página trata de eventos onde o tempo (datas) são importantes:</p>
+    <br>
+    <%=  f.radio_button :event, 'false', :onclick=> "$('eventForm').hide();"%> <span> não </span>
+    
+    <%=  f.radio_button :event, 'true',  :onclick=> "$('eventForm').show();" %> <span> sim </span>
+    <div id='eventForm' style="display:<%= @page.event ? 'block' : 'none' %>;">
+      <label for='page_event_start'>Data de início (padrão é a data atual):</label><br>
+      <%= date_select :page, :event_start , :order => [:day, :month, :year]%>
+       <%= error_message_on 'page' ,'event_start' %>
+      <br>
+      <label for='page_event_end'>Data de término (opcional):</label><br>
+      <%= date_select :page, :event_end , :order => [:day, :month, :year], :include_blank => [:day  => true, :month => true, :year =>  true]%>
+    </div>
+  </p>
+  <br>
+  <br>
+  <%= f.hidden_field :study_case_id %>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Insira links internos facilmente</title>
+	<script type="text/javascript" src="/javascripts/prototype.js"></script>
+	<script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+</head>
+<body>
+
+<form onsubmit="ExampleDialog.insert();return false;" action="#">
+	<h2>Seleciona o estudo de caso e depois a página que quiser referenciar.</h2>
+  <input id="someval" name="someval" type="hidden" class="text" />
+	<input id="somearg" name="somearg" type="hidden" class="text" />
+
+	<p>
+	  <h3>Estudo de Caso</h3>
+	  <select id='select_study_cases' onchange='load_select_pages(this.value);'>
+	   <option>Carregando...</option>
+	  </select>
+	</p>
+	
+	<p>
+	  <h3>Página:</h3>
+	  <select id='select_pages'></select>
+  </p>	
+  
+	<div class="mceActionPanel">
+		<div style="float: left">
+			<input type="button" id="insert" name="insert" value="Inserir" onclick="InternallinkDialog.insert();" />
+		</div>
+
+		<div style="float: right">
+			<input type="button" id="cancel" name="cancel" value="Cancelar" onclick="tinyMCEPopup.close();" />
+		</div>
+	</div>
+</form>
+
+</body>
+</html>

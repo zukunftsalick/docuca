@@ -189,20 +189,18 @@ body {
 
     #sidebar_left .bg-menu {
         background: #d3d1d1 url(/images/bg_menu.jpg) repeat-x top left;
-        min-height: 300px;
-    }
-    
-        .bg-menu .faq-menu-footer { 
-            background: url(/images/faq_menu_footer.jpg) no-repeat top left;
+        
+    }    
+    .bg-menu .faq-menu-footer { 
+            background: url(/images/faq_menu_footer.gif) no-repeat bottom left;
             width: 272px;
-            height: 23px;
-        }
+            height: 33px;
+    }
 		.bg-menu .study_cases-menu-footer{
-			background: url(/images/study_case_menu_footer.jpg) no-repeat top left;
+			background: url(/images/study_case_menu_footer.gif) no-repeat bottom left;
 			width: 272px;
-            height: 23px;
+      height: 33px;
 		}
-
     #sidebar_left .ec-menu {
         background: url(/images/bt_ec.jpg) no-repeat top left;
         width: 272px;
@@ -376,12 +374,22 @@ h3 { font-size: 120%; }
 
 /* pages */
 #form_page{
-	width: 550px;
+	width: 90%;
+}
+#form_page{
+	border: 10px solid #d3d3d1;
+	padding:10px;
 }
 #form_page input, textarea, select{
 	width:100%;
 }
 
+#eventForm{
+		margin-top: 10px;
+}
+#eventForm select{
+	width:100px;
+}
 
 /* errors */
 .formError{
@@ -398,4 +406,17 @@ h3 { font-size: 120%; }
 .fieldWithErrors input {
 	border: 1px solid red;
 	display:inline;
+}
+
+/* grow notification */
+h6.growl_msg {
+	color:#fff;
+	font-size:90%;
+}
+
+.pages-tree{
+		margin-top:15px;
+}
+.pages-tree ul{
+	padding-left:30px;
 }

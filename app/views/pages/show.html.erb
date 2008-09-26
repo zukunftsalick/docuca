@@ -1,7 +1,8 @@
-
 <p>
   <h1> 
-    <a href='<%=show_permalink(@page)%>' title='<%=@page.title %>'> <%= @page.title%></a>
+    <a href='<%=show_permalink(@page)%>' title='<%=@page.title %>'> <%= @page.title%>
+    </a>
+    <%= (link_image_page_edit(" ", edit_study_case_page_path(parent_object, @page))) if current_user  %>
   </h1> 
 </p>
 <p>

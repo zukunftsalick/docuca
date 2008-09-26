@@ -6,7 +6,12 @@ class PagesController < ResourceController::Base
   
   
 
-  
+  index do
+    respond_to do |format|
+      format.js { render :partial => 'pages'}
+      format.html {}
+    end
+  end
   
   def show
     

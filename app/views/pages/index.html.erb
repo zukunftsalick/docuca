@@ -1,6 +1,9 @@
 <h1><%=@study_case.name %></h1>
-<h2>Lista de páginas <%=link_to( image_tag('page_add.png', :title => 'Adicionar Página', :alt => 'Adicionar Página'), new_object_path) unless !current_user%>
-</h2>
-<br>
-<%=print_node(@study_case.pages.root) %>
+ <%=link_to( image_tag('page_add.png', :title => 'Adicionar Página', :alt => 'Adicionar Página')+" Adicionar página", new_object_path) unless !current_user%>
+
+<div class='pages-tree'>
+  <%= show_pages_tree %>
+</div>
+
+
 

@@ -40,14 +40,16 @@ Control.DatePicker.prototype = {
 			var topOffset = /MSIE/.test(navigator.userAgent) ? '1px' : '3px';
 			Element.setStyle(this.icon, {'position': 'relative', 'left': '-18px', 'top': topOffset});
 			Element.insertAfter(this.icon, this.element);
+			//Event.observe(this.icon, 'load', this.togglePicker.bindAsEventListener(this));
 			Event.observe(this.icon, 'click', this.togglePicker.bindAsEventListener(this));
 		} else {
+			//Event.observe(this.element, 'load', this.togglePicker.bindAsEventListener(this));
 			Event.observe(this.element, 'click', this.togglePicker.bindAsEventListener(this));
 		}
 
 		this.hidePickerListener = this.delayedHide.bindAsEventListener(this);
-		Event.observe(this.element, 'keypress', this.keyHandler.bindAsEventListener(this));
-		Event.observe(document, 'keypress', this.docKeyHandler.bindAsEventListener(this));
+		Event.observe(document, 'click', this.docKeyHandler.bindAsEventListener(this));
+	
 
 		this.pickerActive = false;
 	},
@@ -813,3 +815,16 @@ Object.extend(Control.DatePickerPanel.prototype, {
 		}
 	}
 });
+
+Control.DatePicker.Locale['pt_BR'] = { 
+    dateTimeFormat: 'dd/MM/yyyy HH:mm', 
+    dateFormat: 'MM-dd-yyyy',
+    firstWeekDay: 1, 
+    weekend: [0,6], 
+    language: 'pt'
+};
+Control.DatePicker.Language['pt'] = { 
+  months: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'], 
+  days: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'],
+  strings: { 'Now': 'agora', 'Today': 'hoje', 'Time': 'hora', 'Exact minutes': 'minutos exatos', 'Select Date and Time': 'seleciona dia e hora', 'Open calendar': 'abrir calendario' }
+ };
