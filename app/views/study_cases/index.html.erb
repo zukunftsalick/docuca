@@ -1,8 +1,6 @@
+<h1>Dica:</h1>
+<h2>Na barra lateral a esquerda, você encontra os títulos dos estudos de caso.</h2>
 
-  <%= render :partial => 'study_case' ,:collection => @study_cases %>
-
-<br/>
-<%= will_paginate @study_cases %>
-
-<%= (link_to 'Adicionar estudo de caso', new_object_url) if current_user %>
+<br>
+<%= (link_to '<span class="add-study-case">+</span> Adicionar estudo de caso', new_object_url) if current_user %>
 

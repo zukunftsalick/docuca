@@ -69,5 +69,6 @@ Rails::Initializer.run do |config|
 end
 
 require 'will_paginate'
+require 'youtube_g'
 
 SITE="http://localhost:3001"

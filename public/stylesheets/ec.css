@@ -43,6 +43,10 @@ textarea{
 	padding-left: 10px;
 }
 
+.add-study-case{
+	font-size:450%;
+	color:#f79021;
+}
 .promo {
     background: url(/images/banner.jpg) no-repeat top left;
     width: 912px;
@@ -237,6 +241,7 @@ body {
 		    float: right; 
 		    width: 287px; 
 		    background: #ebc586 url(/images/sidebar_bg.jpg) repeat-x top left;
+				text-align:center;
 		}
 
 		    #sidebar-right .border-bottom h1 {
