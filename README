@@ -1,0 +1,9 @@
+* INSTALLATION
+
+- Open config/environment.rb and edit the SITE constant according your needs
+- Create a file called "site_keys.rb" within initializers directory and in that file add the following lines. You can also use the generator provided with restful-plugin. Check their README file if you need
+  
+  REST_AUTH_SITE_KEY         = 'someveryrandontextandreasonablebig'
+  REST_AUTH_DIGEST_STRETCHES = 10
+
+- Create your database and run db:migrate
