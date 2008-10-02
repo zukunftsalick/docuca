@@ -1,5 +1,6 @@
 class FaqAdminController < ApplicationController
   before_filter :login_required
+  layout 'faq'
   def index
     @faqs = Faq.find :all
   end
@@ -7,7 +8,7 @@ class FaqAdminController < ApplicationController
   def new
     @faq = Faq.new
   end
-
+  
   def create
     @faq = Faq.new(params[:faq])
     if @faq.save

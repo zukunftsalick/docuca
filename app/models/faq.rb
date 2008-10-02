@@ -9,11 +9,10 @@ class Faq < ActiveRecord::Base
     "#{id}-#{question.gsub(/[^a-z0-9]+/i, '-')}".downcase
   end
   
+  
   def faq_category
     FaqCategory.find(self.faq_category_id)
   end
   
-  def short_answer
-    
-  end
+  
 end

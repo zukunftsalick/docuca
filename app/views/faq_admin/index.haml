@@ -1,28 +1,28 @@
-%h1 Listing Faq Items
-
-= flash_div :message
+%h1 Listando Items FAQ
+= link_to "<h2>Inserir nova pergunta</h2>", new_faq_adm_url 
+= link_to "<h2>Inserir nova categoria</h2>", new_faq_category_url 
 
 - if @faqs.empty?
 %p There are no items to display.
 - else
 %table
   %tr
-    %th Question
-    %th Answer
-    %th Action
+    %th Categoria
+    %th Pergunta
+    %th Ação
   - @faqs.each do |faq|
   %tr
     %td
-      = truncate(faq.question, 200)
+      = link_to(faq.faq_category.name, edit_faq_adm_path(faq))
     %td
-      = truncate(faq.answer, 200)
+      = link_to(truncate(faq.question, 200), edit_faq_adm_path(faq))
     %td
-      = link_to "Edit", edit_faq_adm_url(faq) 
+      = link_to "Editar", edit_faq_adm_path(faq) 
       | 
-      = link_to "Delete", faq_adm_url(faq), :method => :delete, :confirm => 'Are you sure?'
+      = link_to "Apagar", faq_adm_path(faq), :method => :delete, :confirm => 'Você tem certeza?'
   - end
 - end
 
 
 %p
-  = link_to "New Question", new_faq_adm_url 
+  

@@ -1,3 +1,8 @@
-~ f.text_area :question
-~ f.text_area :answer
-~ f.select :faq_category_id, FaqCategory.find(:all).collect {|cat| [cat.name, cat.id]}
+%label 
+  %h2 Pergunta
+~ text_area :faq, :question
+%label 
+  %h2 Resposta
+~ text_area :faq, :answer
+%label Categoria
+= select :faq, :faq_category_id, FaqCategory.find(:all).collect {|cat| [cat.name, cat.id]}
